@@ -6,9 +6,8 @@
 
 # 2.Rendy Matheu - 535240129
 
-# 3.Gerrald -
+# 3.Gerrald - 535240128
 
-# 4.rafly -
- 
-# 5.Imam -
- 
+# 4.Rafly Prayoga - 535240004
+
+# 5.Imam - 535240132
