@@ -1,4 +1,4 @@
-const listsService = require('./lists-service');
+#const listsService = require('./lists-service');
 const { errorResponder, errorTypes } = require('../../../core/errors');
 
 async function getLists(request, response, next) {
