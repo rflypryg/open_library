@@ -11,5 +11,3 @@
 # 4.Rafly Prayoga - 535240004
 
 # 5.Imam - 535240132
-
-# test
