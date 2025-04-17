@@ -1,4 +1,4 @@
-#const coversRepository = require('./covers-repository');
+const coversRepository = require('./covers-repository');
 
 async function getCover(coverType, idType, idValue, size) {
   return coversRepository.getCover(coverType, idType, idValue, size);
