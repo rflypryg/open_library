@@ -1,5 +1,5 @@
-const worksService = require('./works-service');
-const { errorResponder, errorTypes } = require('../../../core/errors');
+const worksService = require("./works-service");
+const { errorResponder, errorTypes } = require("../../../core/errors");
 
 async function getWork(request, response, next) {
   try {
@@ -8,7 +8,7 @@ async function getWork(request, response, next) {
     const work = await worksService.getWorkById(id);
 
     if (!work) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Work not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Work not found");
     }
 
     return response.status(200).json(work);
@@ -22,7 +22,7 @@ async function createWork(request, response, next) {
     const workData = request.body;
 
     if (!workData.title) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Title is required');
+      throw errorResponder(errorTypes.VALIDATION_ERROR, "Title is required");
     }
 
     const work = await worksService.createWork(workData);
@@ -41,10 +41,13 @@ async function updateWork(request, response, next) {
     const result = await worksService.updateWork(id, workData);
 
     if (result.nModified === 0) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Work not found or no changes made');
+      throw errorResponder(
+        errorTypes.NOT_FOUND,
+        "Work not found or no changes made"
+      );
     }
 
-    return response.status(200).json({ message: 'Work updated successfully' });
+    return response.status(200).json({ message: "Work updated successfully" });
   } catch (error) {
     return next(error);
   }
@@ -57,10 +60,10 @@ async function deleteWork(request, response, next) {
     const result = await worksService.deleteWork(id);
 
     if (result.deletedCount === 0) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Work not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Work not found");
     }
 
-    return response.status(200).json({ message: 'Work deleted successfully' });
+    return response.status(200).json({ message: "Work deleted successfully" });
   } catch (error) {
     return next(error);
   }
