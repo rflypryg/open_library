@@ -11,4 +11,5 @@ async function searchAuthors(query) {
 module.exports = {
   searchBooks,
   searchAuthors,
+  searchLists,
 };
